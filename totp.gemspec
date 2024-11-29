@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name              = "totp"
-  s.version           = "1.0.0"
+  s.version           = "1.0.1"
   s.summary           = "Time-based One-Time Passwords"
   s.description       = "Time-based One-Time Passwords"
   s.authors           = ["Michel Martens"]

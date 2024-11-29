@@ -10,11 +10,11 @@ module TOTP
 
   # Return whether or not the key is valid for the given secret
   def self.valid?(secret, pass, time = Time.now)
-    return self.passwords(secret, time).include?(pass)
+    return self.passwords(secret, time).include?(Integer(pass))
   end
 
   def self.totp(hmac, time)
-    bytes = [time].pack('>q').reverse
+    bytes = [time].pack('q<').reverse
 
     hmac.reset
     hmac.update(bytes)
