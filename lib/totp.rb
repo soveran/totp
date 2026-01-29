@@ -1,11 +1,12 @@
 require 'openssl'
 require 'base32'
+require 'securerandom'
 
 module TOTP
 
   # Generate a random secret
   def self.secret
-    return Base32.encode((0...10).map { rand(255).chr }.join)
+    return Base32.encode(SecureRandom.bytes(10))
   end
 
   # Return whether or not the key is valid for the given secret
